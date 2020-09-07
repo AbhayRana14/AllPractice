@@ -1,0 +1,33 @@
+function Button(props) {
+  // const handleClick = () => setCounter(counter+1);
+	return (
+  	<button onClick={() => props.onClickFunction(props.multiplyBy)}>
+      X {props.multiplyBy}
+    </button>
+  );
+}
+
+function Display(props) {
+	return (
+  	<div>{props.message}</div>
+  );
+}
+
+function App() {
+	const [counter, setCounter] = useState(1);
+  const incrementCounter = (multiplyValue) => setCounter(counter * multiplyValue);
+	return (
+    <div>
+      <Button onClickFunction={incrementCounter} multiplyBy={1} />
+      <Button onClickFunction={incrementCounter} multiplyBy={2} />
+      <Button onClickFunction={incrementCounter} multiplyBy={3} />
+      <Button onClickFunction={incrementCounter} multiplyBy={4} />
+      <Display message={counter}/>
+    </div>  
+  );
+}
+
+ReactDOM.render(
+  <App />, 
+  document.getElementById('mountNode'),
+);
