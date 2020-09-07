@@ -1,0 +1,19 @@
+function Button() {
+  const [counter,setCounter] =useState(5);
+  const handleClick = () => setCounter(counter*2);
+	return (
+    <button onClick={handleClick}>
+    Count is {counter}
+    </button>
+  );
+}
+function Display(){
+  return(
+    <div>Abhay Rana</div>
+  );
+}
+
+ReactDOM.render(
+  [<Button />,<Display/>], 
+  document.getElementById('mountNode'),
+);
