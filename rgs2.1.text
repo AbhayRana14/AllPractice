@@ -1,0 +1,17 @@
+class App extends React.Component{
+  render(){
+    return(
+      <div className="header">{this.props.title}</div>
+    );
+  }
+}
+
+
+//const App =({title})=>(
+//<div className="header">{title}</div>
+//);
+
+ReactDOM.render(
+  <App title="The Git Hub Cards App" />,
+  mountNode,
+);
